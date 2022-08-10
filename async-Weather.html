@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        async function getWeatherData() {
+            let data = await fetch("https://api.openweathermap.org/data/2.5/weather?q=London&appid=50f517015e5efe89eef1307b37e69a2e")
+            //  console.log(data)
+            let res = await data.json()
+            console.log(res)
+        }
+        getWeatherData()
+    </script>
+</body>
+
+</html>

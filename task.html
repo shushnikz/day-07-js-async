@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+      async function getWeatherData(){
+         let data=await fetch("https://restcountries.com/v2/all")
+        let res=await data.json()
+        console.log(res)
+        console.log(res[0].name)
+        cityName=res[0].name
+
+        let data1=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=50f517015e5efe89eef1307b37e69a2e`)
+        //  console.log(data1)
+        let res1=await data1.json()
+        console.log(res1)
+    }
+      getWeatherData()
+    </script>
+</body>
+</html>
